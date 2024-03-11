@@ -12,6 +12,8 @@ function addEventListeners() {
   document.addEventListener("DOMContentLoaded", loadTasks4LS);
   addToDoButton.addEventListener("click", addToDo);
   listGroup.addEventListener("click", deleteSingleTask);
+  clearAllTasksButton.addEventListener("click", clearAllTasks);
+  searchToDo.addEventListener('keyup', filterTasks)
 }
 
 function loadTasks4LS() {
@@ -67,9 +69,14 @@ function deleteSingleTask(e) {
     let deleteTask = e.target.parentElement;
     if (confirm("Görevi silmek istediğinize emin misiniz?")) {
       deleteTask.remove();
+      deleteSingleTask4LS(deleteTask);
+      console.log(tasks.length)
+      tasks.length == 0 && (listGroup.parentElement.style.display = "none");
+      showAlert(
+        "success",
+        `${deleteTask.textContent} adlı görev başarılı bir şekilde silindi.`
+      );
     }
-    deleteSingleTask4LS(deleteTask);
-    showAlert('success', `${deleteTask.textContent} adlı görev başarılı bir şekilde silindi.`)
   }
   e.preventDefault();
 }
@@ -81,6 +88,30 @@ function deleteSingleTask4LS(deleteTask) {
     }
   });
   localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function clearAllTasks() {
+  if (confirm("Tüm görevleri silmek istediğinize emin misiniz?")) {
+    tasks = [];
+    listGroup.innerHTML = "";
+    listGroup.parentElement.style.display = "none";
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    showAlert("success", "Tüm görevler başarılı bir şekilde silindi.");
+  }
+}
+
+function filterTasks (e) {
+  let listGroupItems = document.querySelectorAll('.list-group-item')
+  listGroupItems.forEach (function (singleListItem) {
+    if (singleListItem.textContent.toLowerCase().trim().indexOf(e.target.value.toLowerCase().trim()) == -1) {
+      singleListItem.classList.add('d-none')
+      singleListItem.classList.remove('d-flex')
+    }
+    else {
+      singleListItem.classList.add('d-flex')
+      singleListItem.classList.remove('d-none')
+    }
+  })
 }
 
 function showAlert(type, message) {
