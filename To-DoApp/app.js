@@ -13,7 +13,8 @@ function addEventListeners() {
   addToDoButton.addEventListener("click", addToDo);
   listGroup.addEventListener("click", deleteSingleTask);
   clearAllTasksButton.addEventListener("click", clearAllTasks);
-  searchToDo.addEventListener('keyup', filterTasks)
+  searchToDo.addEventListener("keyup", filterTasks);
+  listGroup.addEventListener('click', updateStatusItem)
 }
 
 function loadTasks4LS() {
@@ -70,7 +71,7 @@ function deleteSingleTask(e) {
     if (confirm("Görevi silmek istediğinize emin misiniz?")) {
       deleteTask.remove();
       deleteSingleTask4LS(deleteTask);
-      console.log(tasks.length)
+      console.log(tasks.length);
       tasks.length == 0 && (listGroup.parentElement.style.display = "none");
       showAlert(
         "success",
@@ -100,18 +101,37 @@ function clearAllTasks() {
   }
 }
 
-function filterTasks (e) {
-  let listGroupItems = document.querySelectorAll('.list-group-item')
-  listGroupItems.forEach (function (singleListItem) {
-    if (singleListItem.textContent.toLowerCase().trim().indexOf(e.target.value.toLowerCase().trim()) == -1) {
-      singleListItem.classList.add('d-none')
-      singleListItem.classList.remove('d-flex')
+function filterTasks(e) {
+  let listGroupItems = document.querySelectorAll(".list-group-item");
+  listGroupItems.forEach(function (singleListItem) {
+    if (
+      singleListItem.textContent
+        .toLowerCase()
+        .trim()
+        .indexOf(e.target.value.toLowerCase().trim()) == -1
+    ) {
+      singleListItem.classList.add("d-none");
+      singleListItem.classList.remove("d-flex");
+    } else {
+      singleListItem.classList.add("d-flex");
+      singleListItem.classList.remove("d-none");
     }
-    else {
-      singleListItem.classList.add('d-flex')
-      singleListItem.classList.remove('d-none')
+  });
+}
+
+function updateStatusItem (e) {
+  let updateSingleListItem = e.target
+  updateSingleListItem.classList.toggle('done')
+  updateStatusItem4LS(updateSingleListItem)
+}
+
+function updateStatusItem4LS (singleItem) {
+  tasks.forEach (function (listItem) {
+    if (listItem.id == singleItem.id) {
+      listItem.status = listItem.status == 'done' ? '' : 'done'
     }
   })
+  localStorage.setItem('tasks', JSON.stringify(tasks))
 }
 
 function showAlert(type, message) {
