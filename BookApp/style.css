@@ -9,6 +9,17 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="url"]:focus {
+  box-shadow: none;
+}
+
+::placeholder {
+  font-size: .8rem;
+  font-style: italic;
+}
+
 nav {
   background-color: #e7e4de;
 }
@@ -33,7 +44,7 @@ nav {
 }
 
 .books {
-  background-color: #EEEBE5;
+  background-color: #eeebe5;
 }
 
 .card {
@@ -53,7 +64,7 @@ nav {
 }
 
 .card .card-text {
-  font-size: .9rem;
+  font-size: 0.9rem;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -67,4 +78,8 @@ nav {
 
 .card a:hover {
   color: #af7e5b;
+}
+
+footer {
+  background-color: #e7e4de;
 }
