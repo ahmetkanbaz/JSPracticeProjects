@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./todoapp.png" type="image/x-icon">
+    <title>To-Do App</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      .done {
+        text-decoration: line-through;
+        background-color: beige;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="py-5">
+      <h1 class="text-center">To-Do App</h1>
+      <div class="container mt-4">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            id="inputToDo"
+            class="form-control shadow-none border-secondary"
+            placeholder="Görev Giriniz..."
+          />
+          <button
+            class="btn btn-outline-primary"
+            type="button"
+            id="addToDoButton"
+          >
+            Görev Ekle
+          </button>
+        </div>
+      </div>
+
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-md-6"><h4>To-Do Listesi</h4></div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              id="searchToDo"
+              class="form-control shadow-none border-secondary"
+              placeholder="Görev Arayın..."
+            />
+          </div>
+        </div>
+        <ul class="list-group my-4">
+          <!--! Buraya yeni oluşturulan To-Do'lar geliyor... -->
+        </ul>
+        <div class="d-flex justify-content-end">
+          <button id="clearAllTasksButton" class="btn btn-danger">
+            Tüm To-Do'ları Sil
+          </button>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
