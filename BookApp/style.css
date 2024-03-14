@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #FAA01C;
+}
+
+.socials div {
+  background-color: #FAA01C;
+  width: 35px;
+  height: 35px;
+  transition: all .3s ease-in-out;
+}
+
+.socials div:hover {
+  background-color: #d78d1d;
+}

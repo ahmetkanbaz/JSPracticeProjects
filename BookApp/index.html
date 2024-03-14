@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book APP</title>
 
-    <link rel="shortcut icon" href="./assets/bookapp.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/bookapp.png" type="image/x-icon" />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -18,8 +18,82 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top py-3">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><span class="fa-solid fa-book-open-reader me-2"></span>BookApp</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#bookAppNavbar"
+          aria-controls="bookAppNavbar"
+          aria-expanded="false"
+          aria-label="BookApp Toggle Navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="bookAppNavbar">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Anasayfa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Hakkımızda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">İletişim</a>
+            </li>
+          </ul>
+          <div
+            class="d-flex gap-2 align-items-center justify-content-lg-center socials"
+          >
+            <div
+              class="rounded-circle d-flex align-items-center justify-content-center"
+            >
+              <a
+                href="https://github.com/ahmetkanbaz"
+                target="_blank"
+                class="fa-brands fa-github text-black"
+              ></a>
+            </div>
+            <div
+              class="rounded-circle d-flex align-items-center justify-content-center"
+            >
+              <a
+                href="https://www.linkedin.com/in/ahmet-kanbaz-156002242/"
+                target="_blank"
+                class="fa-brands fa-linkedin-in text-black"
+              ></a>
+            </div>
+            <div
+              class="rounded-circle d-flex align-items-center justify-content-center"
+            >
+              <a
+                href="https://www.instagram.com/ahmetkanbazz/"
+                target="_blank"
+                class="fa-brands fa-instagram text-black"
+              ></a>
+            </div>
+            <div
+              class="rounded-circle d-flex align-items-center justify-content-center"
+            >
+              <a
+                href="https://twitter.com/ahmetkanbazz"
+                target="_blank"
+                class="fa-brands fa-x-twitter text-black"
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
