@@ -9,17 +9,25 @@ a {
   transition: all .3s ease-in-out;
 }
 
+nav {
+  background-color: #E7E4DE;
+}
+
 .nav-link:hover {
-  color: #FAA01C;
+  color: #AF7E5B;
 }
 
 .socials div {
-  background-color: #FAA01C;
+  background-color: #AF7E5B;
   width: 35px;
   height: 35px;
   transition: all .3s ease-in-out;
 }
 
 .socials div:hover {
-  background-color: #d78d1d;
+  background-color: #9d6741;
+}
+
+.homeBanner {
+  background-color: #F4F2EE;
 }
