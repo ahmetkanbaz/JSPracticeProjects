@@ -62,6 +62,7 @@ class Book {
   };
 
   static sortBooks = function (e) {
+    sortButton.textContent = e.target.textContent
     Filter.sortBooks2Filter(e.target.textContent)
     e.preventDefault()
   }

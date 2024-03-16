@@ -1,3 +1,4 @@
+const sortButton = document.querySelector('.sortButton')
 const sortBooksItems = document.querySelectorAll(".dropdown-item");
 const addNewBookButtons = document.querySelectorAll(".addNewBookButton");
 const searchBook = document.getElementById("searchBook");
