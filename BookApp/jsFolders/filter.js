@@ -26,13 +26,17 @@ class Filter {
     }
 
     if (searchValue) {
-      books = books.filter((book) => book.name.toLowerCase().includes(searchValue.toLowerCase()))
+      books = books.filter((book) =>
+        book.name.toLowerCase().includes(searchValue.toLowerCase())
+      );
     }
 
     UI.updateDisplayBooks2UI(books);
 
     if (books.length == 0) {
-      UI.warning4UI('Aradığınız kitap bulunamadı!')
+      UI.warning4UI("Aradığınız kitap bulunamadı!");
     }
+
+    UI.deleteAllBooksButtonStyle(books.length);
   };
 }

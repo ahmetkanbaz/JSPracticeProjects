@@ -17,6 +17,8 @@ class LocalStorage {
     if (document.getElementById("warning4UI")) {
       document.getElementById("warning4UI").remove();
     }
+
+    UI.deleteAllBooksButtonStyle(books.length)
   };
 
   static showBooksFromLocalStorage = function () {
@@ -26,6 +28,7 @@ class LocalStorage {
     } else {
       books.map((book) => UI.addNewBook4UI(book));
     }
+    UI.deleteAllBooksButtonStyle(books.length)
   };
 
   static deleteBook4LocalStorage = function (bookId) {
@@ -39,7 +42,9 @@ class LocalStorage {
 
     if (books.length == 0) {
       UI.warning4UI("Tüm kitaplar silindi!");
-    } 
+    }
+
+    UI.deleteAllBooksButtonStyle(books.length)
   };
 
   static updateBook2LocalStorage = function (bookId, index) {
@@ -60,5 +65,6 @@ class LocalStorage {
 
   static deleteAllBooks2LocalStorage = function () {
     localStorage.setItem('books', JSON.stringify([]))
+    UI.deleteAllBooksButtonStyle(LocalStorage.getBooks4LocalStorage().length)
   }
 }

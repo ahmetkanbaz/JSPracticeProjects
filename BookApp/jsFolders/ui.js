@@ -104,6 +104,17 @@ class UI {
     sortButton.textContent = 'Sırala'
   }
 
+  static deleteAllBooksButtonStyle = function (booksLength) {
+    if (booksLength == 0) {
+      clearAllBooks.parentElement.classList.remove('d-flex')
+      clearAllBooks.parentElement.classList.add('d-none')
+    }
+    else {
+      clearAllBooks.parentElement.classList.remove('d-none')
+      clearAllBooks.parentElement.classList.add('d-flex')
+    }
+  }
+
   static deleteAllBooks2UI = function () {
     allBooks.innerHTML = ''
   }
