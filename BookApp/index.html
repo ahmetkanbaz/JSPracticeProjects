@@ -140,10 +140,10 @@
                 </ul>
               </div>
               <button
-                class="btn btn-primary rounded-pill d-flex d-md-none"
+                class="btn btn-primary rounded-pill d-flex d-md-none addNewBookButton"
                 type="button"
                 data-bs-toggle="modal"
-                data-bs-target="#addNewBook"
+                data-bs-target="#addNewBookModal"
               >
                 Kitap Ekle
               </button>
@@ -152,25 +152,26 @@
           <div class="col-md-8">
             <input
               type="text"
+              id="searchBook"
               class="form-control"
               placeholder="Kitap adına göre arama yapınız..."
             />
           </div>
           <div class="col-md-2 d-md-flex justify-content-end d-none">
             <button
-              class="btn btn-primary rounded-pill"
+              class="btn btn-primary rounded-pill addNewBookButton"
               type="button"
               data-bs-toggle="modal"
-              data-bs-target="#addNewBook"
+              data-bs-target="#addNewBookModal"
             >
               Kitap Ekle
             </button>
           </div>
         </div>
 
-        <div class="row mt-3">
-          <h3 class="mb-3">Kitaplar</h3>
-          <div class="col-lg-2 col-md-3 col-sm-4 col-12">
+        <h3 class="my-3">Kitaplar</h3>
+        <div class="row" id="allBooks">
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6" id="id">
             <div class="card">
               <img
                 src="https://img.kitapyurdu.com/v1/getImage/fn:11772063/wh:true/wi:220"
@@ -210,15 +211,15 @@
 
     <div
       class="modal fade"
-      id="addNewBook"
+      id="addNewBookModal"
       tabindex="-1"
-      aria-labelledby="addNewBookLabel"
+      aria-labelledby="addNewBookModalLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="addNewBookTitle">BookApp</h1>
+            <h1 class="modal-title fs-5" id="addNewBookModalTitle">BookApp</h1>
             <button
               type="button"
               class="btn-close"
@@ -237,20 +238,10 @@
                   placeholder="Kitabın adını giriniz..."
                 />
               </div>
-              <div class="mb-3">
-                <label for="modalBookAuthor" class="form-label"
-                  >Yazar Adı - Soyadı</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="modalBookAuthor"
-                  placeholder="Yazarın adını ve soyadını giriniz..."
-                />
-              </div>
+              
               <div class="mb-3">
                 <label for="modalBookSummary" class="form-label"
-                  >Kategori</label
+                  >Kitap Özeti</label
                 >
                 <textarea
                   name="modalBookSummary"
@@ -289,7 +280,7 @@
             <button
               type="button"
               class="btn btn-primary"
-              id="createBookButton"
+              id="createBookButtonModal"
               data-bs-dismiss="modal"
             >
               Kitap Oluştur
@@ -297,8 +288,7 @@
             <button
               type="button"
               class="btn btn-warning"
-              id="updateButton"
-              data-bs-dismiss="modal"
+              id="updateButtonModal"
             >
               Güncelle
             </button>
@@ -373,6 +363,8 @@
       crossorigin="anonymous"
     ></script>
 
+    <script src="./jsFolders/ui.js"></script>
+    <script src="./jsFolders/book.js"></script>
     <script src="./jsFolders/app.js"></script>
   </body>
 </html>
