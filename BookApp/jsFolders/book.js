@@ -60,4 +60,10 @@ class Book {
     }
     e.preventDefault();
   };
+
+  static sortBooks = function (e) {
+    Filter.sortBooks2Filter(e.target.textContent)
+    console.log(e.target.textContent)
+    e.preventDefault()
+  }
 }

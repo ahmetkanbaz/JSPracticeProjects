@@ -14,7 +14,9 @@ class LocalStorage {
     let books = LocalStorage.getBooks4LocalStorage();
     books.push(book);
     localStorage.setItem("books", JSON.stringify(books));
-    document.getElementById("warning4UI").remove();
+    if (document.getElementById("warning4UI")) {
+      document.getElementById("warning4UI").remove();
+    }
   };
 
   static showBooksFromLocalStorage = function () {
@@ -50,7 +52,7 @@ class LocalStorage {
       };
       books.splice(index, 1, newBookValue);
       localStorage.setItem("books", JSON.stringify(books));
-      UI.updateDisplayBooks2UI(books)
+      UI.updateDisplayBooks2UI(books);
     });
   };
 }

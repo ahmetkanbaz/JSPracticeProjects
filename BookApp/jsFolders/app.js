@@ -20,4 +20,5 @@ function addEventListeners() {
   createBookButtonModal.addEventListener('click', Book.addBook)
   allBooks.addEventListener('click', Book.deleteBook)
   allBooks.addEventListener('click', Book.updateBook)
+  sortBooksItems.forEach(item => item.addEventListener('click', Book.sortBooks))
 }
