@@ -26,5 +26,15 @@ class Book {
     e.preventDefault();
   };
 
-  
+  static deleteBook = function (e) {
+    if (e.target.className == 'fa-solid fa-trash') {
+      let singleBook = e.target.parentElement.parentElement.parentElement.parentElement
+      let bookName = e.target.parentElement.parentElement.children[0].textContent
+      if (confirm(`${bookName} adlı kitabı silmek istediğinize emin misiniz?`)) {
+        UI.deleteBook4UI(singleBook)
+        LocalStorage.deleteBook4LocalStorage(singleBook.id)
+      }
+    }
+    e.preventDefault()
+  }
 }

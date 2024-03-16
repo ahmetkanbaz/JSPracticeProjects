@@ -10,6 +10,15 @@ class UI {
     modalBookImageUrl.value = "";
   };
 
+  static warning4UI = function (message) {
+    const newWarningDiv = document.createElement('div')
+    newWarningDiv.id = 'warning4UI'
+    newWarningDiv.classList = 'alert alert-danger py-4 text-center'
+    newWarningDiv.role = 'alert'
+    newWarningDiv.textContent = message
+    allBooks.appendChild(newWarningDiv)
+  }
+
   static addNewBook4UI = function (book) {
     const { id, name, summary, date, imageUrl } = book;
     const newBookCol = document.createElement("div");
@@ -67,12 +76,7 @@ class UI {
     allBooks.appendChild(newBookCol);
   };
 
-  static warning4UI = function (message) {
-    const newWarningDiv = document.createElement('div')
-    newWarningDiv.id = 'warning4UI'
-    newWarningDiv.classList = 'alert alert-danger py-4 text-center'
-    newWarningDiv.role = 'alert'
-    newWarningDiv.textContent = message
-    allBooks.appendChild(newWarningDiv)
+  static deleteBook4UI = function (book) {
+      book.remove()
   }
 }

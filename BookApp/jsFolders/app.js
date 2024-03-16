@@ -17,4 +17,5 @@ addEventListeners();
 function addEventListeners() {
   document.addEventListener('DOMContentLoaded', LocalStorage.showBooksFromLocalStorage)
   createBookButtonModal.addEventListener('click', Book.addBook)
+  allBooks.addEventListener('click', Book.deleteBook)
 }
