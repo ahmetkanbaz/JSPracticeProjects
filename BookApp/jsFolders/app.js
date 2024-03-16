@@ -13,6 +13,8 @@ const modalBookImageUrl = document.getElementById('modalBookImageUrl')
 const createBookButtonModal = document.getElementById('createBookButtonModal')
 const updateButtonModal = document.getElementById('updateButtonModal')
 
+const clearAllBooks = document.getElementById('clearAllBooks')
+
 addEventListeners();
 
 function addEventListeners() {
@@ -23,4 +25,6 @@ function addEventListeners() {
   allBooks.addEventListener('click', Book.updateBook)
   sortBooksItems.forEach(item => item.addEventListener('click', Book.sortBooks))
   searchBook.addEventListener('keyup', Book.searchBooks)
+
+  clearAllBooks.addEventListener('click', Book.deleteAllBooks)
 }

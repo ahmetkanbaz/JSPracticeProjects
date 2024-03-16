@@ -37,7 +37,9 @@ class LocalStorage {
     });
     localStorage.setItem("books", JSON.stringify(books));
 
-    books.length == 0 && UI.warning4UI("Tüm kitaplar silindi!");
+    if (books.length == 0) {
+      UI.warning4UI("Tüm kitaplar silindi!");
+    } 
   };
 
   static updateBook2LocalStorage = function (bookId, index) {
@@ -55,4 +57,8 @@ class LocalStorage {
       UI.updateDisplayBooks2UI(books);
     });
   };
+
+  static deleteAllBooks2LocalStorage = function () {
+    localStorage.setItem('books', JSON.stringify([]))
+  }
 }

@@ -26,7 +26,7 @@ class UI {
     const { id, name, summary, date, imageUrl } = book;
 
     const newBookCol = document.createElement("div");
-    newBookCol.classList = "col-lg-2 col-md-3 col-sm-4 col-6";
+    newBookCol.classList = "col-lg-2 col-md-3 col-sm-4 col-6 mt-3";
     newBookCol.id = id;
     const newCard = document.createElement("div");
     newCard.classList = "card h-100";
@@ -97,5 +97,14 @@ class UI {
   static updateDisplayBooks2UI = function (books) {
     allBooks.innerHTML = ''
     books.map(book => UI.addNewBook4UI(book))
+  }
+
+  static clearFilterItemsValues = function () {
+    searchBook.value = ''
+    sortButton.textContent = 'Sırala'
+  }
+
+  static deleteAllBooks2UI = function () {
+    allBooks.innerHTML = ''
   }
 }
