@@ -9,6 +9,14 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
+.homeBanner {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+    url("https://ncmaz-nextjs.vercel.app/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1440778303588-435521a205bc%3Fixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26ixlib%3Drb-1.2.1%26auto%3Dformat%26fit%3Dcrop%26w%3D1950%26q%3D80&w=1080&q=75");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .homeBanner h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: 5px;
@@ -17,13 +25,4 @@ a {
 .homeBanner p {
   font-size: 1.1rem;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
-
-.blur {
-  background: rgba(255, 255, 255, 1);
-  border-radius: 16px;
-  backdrop-filter: blur(5.1px);
-  -webkit-backdrop-filter: blur(5.1px);
-  border: 1px solid rgba(255, 255, 255, 0.19);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
