@@ -15,5 +15,6 @@ const updateButtonModal = document.getElementById('updateButtonModal')
 addEventListeners();
 
 function addEventListeners() {
+  document.addEventListener('DOMContentLoaded', LocalStorage.showBooksFromLocalStorage)
   createBookButtonModal.addEventListener('click', Book.addBook)
 }

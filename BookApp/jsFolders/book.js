@@ -20,8 +20,11 @@ class Book {
       // UI.clearModalFormInputs()
       const book = new Book(id, name, summary, date, imageUrl);
       UI.addNewBook4UI(book)
+      LocalStorage.addNewBook4Storage(book)
     }
 
     e.preventDefault();
   };
+
+  
 }
