@@ -63,7 +63,10 @@ class Book {
 
   static sortBooks = function (e) {
     Filter.sortBooks2Filter(e.target.textContent)
-    console.log(e.target.textContent)
     e.preventDefault()
+  }
+
+  static searchBooks = function () {
+    Filter.searchBooks2Filter(searchBook.value)
   }
 }

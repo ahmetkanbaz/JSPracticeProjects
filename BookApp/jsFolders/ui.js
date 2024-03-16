@@ -96,7 +96,6 @@ class UI {
 
   static updateDisplayBooks2UI = function (books) {
     allBooks.innerHTML = ''
-    console.log(books)
     books.map(book => UI.addNewBook4UI(book))
   }
 }

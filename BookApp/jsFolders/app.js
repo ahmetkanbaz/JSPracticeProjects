@@ -21,4 +21,5 @@ function addEventListeners() {
   allBooks.addEventListener('click', Book.deleteBook)
   allBooks.addEventListener('click', Book.updateBook)
   sortBooksItems.forEach(item => item.addEventListener('click', Book.sortBooks))
+  searchBook.addEventListener('keyup', Book.searchBooks)
 }
