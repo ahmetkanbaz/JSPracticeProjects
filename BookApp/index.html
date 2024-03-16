@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book APP</title>
+
+    <link rel="shortcut icon" href="./assets/bookapp.png" type="image/x-icon" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg sticky-top py-3">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><span class="fa-solid fa-book-open-reader me-2"></span>BookApp</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#bookAppNavbar"
+          aria-controls="bookAppNavbar"
+          aria-expanded="false"
+          aria-label="BookApp Toggle Navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="bookAppNavbar">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Anasayfa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Hakkımızda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">İletişim</a>
+            </li>
+          </ul>
+          <div
+            class="d-flex gap-2 align-items-center justify-content-lg-center socials"
+          >
+            <div
+              class="rounded-circle d-flex align-items-center justify-content-center"
+            >
+              <a
+                href="https://github.com/ahmetkanbaz"
+                target="_blank"
+                class="fa-brands fa-github text-black"
+              ></a>
+            </div>
+            <div
+              class="rounded-circle d-flex align-items-center justify-content-center"
+            >
+              <a
+                href="https://www.linkedin.com/in/ahmet-kanbaz-156002242/"
+                target="_blank"
+                class="fa-brands fa-linkedin-in text-black"
+              ></a>
+            </div>
+            <div
+              class="rounded-circle d-flex align-items-center justify-content-center"
+            >
+              <a
+                href="https://www.instagram.com/ahmetkanbazz/"
+                target="_blank"
+                class="fa-brands fa-instagram text-black"
+              ></a>
+            </div>
+            <div
+              class="rounded-circle d-flex align-items-center justify-content-center"
+            >
+              <a
+                href="https://twitter.com/ahmetkanbazz"
+                target="_blank"
+                class="fa-brands fa-x-twitter text-black"
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="py-5 homeBanner">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h2 class="mb-4">BookApp</h2>
+            <p class="fs-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+              dolorem amet eius corrupti, alias ratione id reprehenderit! Ab, ea
+              nemo!
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="https://images.unsplash.com/photo-1558901357-ca41e027e43a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGJvb2t8ZW58MHx8MHx8fDA%3D"
+              alt="BookApp Banner Book Image"
+              class="img-fluid rounded w-100"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 books">
+      <div class="container">
+        <div
+          class="row align-items-center gap-md-0 gap-3"
+        >
+          <div class="col-md-2">
+            <div class="d-flex justify-content-between">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle sortButton"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Sırala
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">A - Z</a></li>
+                  <li><a class="dropdown-item" href="#">Z - A</a></li>
+                  <li><a class="dropdown-item" href="#">Yeniden Eskiye</a></li>
+                  <li><a class="dropdown-item" href="#">Eskiden Yeniye</a></li>
+                </ul>
+              </div>
+              <button
+                class="btn btn-primary rounded-pill d-flex d-md-none addNewBookButton"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#addNewBookModal"
+              >
+                Kitap Ekle
+              </button>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <input
+              type="text"
+              id="searchBook"
+              class="form-control"
+              placeholder="Kitap adına göre arama yapınız..."
+            />
+          </div>
+          <div class="col-md-2 d-md-flex justify-content-end d-none">
+            <button
+              class="btn btn-primary rounded-pill addNewBookButton"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#addNewBookModal"
+            >
+              Kitap Ekle
+            </button>
+          </div>
+        </div>
+
+        <h3 class="my-3 pt-3 border-2 border-top">Kitaplar</h3>
+        <div class="row" id="allBooks"></div>
+        <div class="d-none justify-content-md-end mt-3">
+          <button class="btn btn-danger" type="button" id="clearAllBooks">Tüm Kitapları Sil</button>
+        </div>
+      </div>
+    </section>
+
+    <div
+      class="modal fade"
+      id="addNewBookModal"
+      tabindex="-1"
+      aria-labelledby="addNewBookModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="addNewBookModalTitle">BookApp</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="modalBookName" class="form-label">Kitap Adı</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="modalBookName"
+                  placeholder="Kitabın adını giriniz..."
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="modalBookSummary" class="form-label"
+                  >Kitap Özeti</label
+                >
+                <textarea
+                  name="modalBookSummary"
+                  id="modalBookSummary"
+                  class="form-control"
+                  placeholder="Kitabın özetini veya tanıtımını giriniz..."
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="modalBookDate" class="form-label"
+                  >Yazıldığı Tarih</label
+                >
+                <input type="date" class="form-control" id="modalBookDate" />
+              </div>
+              <div class="mb-3">
+                <label for="modalBookImageUrl" class="form-label"
+                  >Kitabın Kapak Fotoğraf URL'i</label
+                >
+                <input
+                  type="url"
+                  class="form-control"
+                  id="modalBookImageUrl"
+                  placeholder="Kitabın resim URL'ini giriniz..."
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Kapat
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="createBookButtonModal"
+              data-bs-dismiss="modal"
+            >
+              Kitap Oluştur
+            </button>
+            <button
+              type="button"
+              class="btn btn-warning"
+              id="updateButtonModal"
+              data-bs-dismiss="modal"
+            >
+              Güncelle
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="pt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <p>
+              <span class="fa-solid fa-book-open-reader display-1"></span>
+              <span class="fs-2 ps-3">BookApp</span>
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+              aut excepturi pariatur tempore? Sed veritatis blanditiis
+              perspiciatis nam, itaque esse!
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h4 class="mb-3">Yararlı Linkler</h4>
+            <div class="d-flex align-items-center gap-3">
+              <span class="fa-solid fa-check"></span>
+              <a href="#">Link1</a>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <span class="fa-solid fa-check"></span>
+              <a href="#">Link2</a>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <span class="fa-solid fa-check"></span>
+              <a href="#">Link3</a>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <span class="fa-solid fa-check"></span>
+              <a href="#">Link4</a>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <span class="fa-solid fa-check"></span>
+              <a href="#">Link5</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h4 class="mb-4">Diğer Bilgiler</h4>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis,
+              in.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="py-4 mt-4 border-top border-black">
+        <p class="text-center mb-0">
+          <span class="fa-solid fa-book me-2"></span>Copyright © 2024 All rights
+          reserved | This template is made with by
+          <a
+            href="https://github.com/ahmetkanbaz"
+            target="_blank"
+            class="fst-italic fs-6 ps-1"
+            >Ahmet KANBAZ</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./jsFolders/ui.js"></script>
+    <script src="./jsFolders/localStorage.js"></script>
+    <script src="./jsFolders/filter.js"></script>
+    <script src="./jsFolders/book.js"></script>
+    <script src="./jsFolders/app.js"></script>
+  </body>
+</html>

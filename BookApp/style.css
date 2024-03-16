@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="url"]:focus {
+  box-shadow: none;
+}
+
+::placeholder {
+  font-size: .8rem;
+  font-style: italic;
+}
+
+nav {
+  background-color: #e7e4de;
+}
+
+.nav-link:hover {
+  color: #af7e5b;
+}
+
+.socials div {
+  background-color: #af7e5b;
+  width: 35px;
+  height: 35px;
+  transition: all 0.3s ease-in-out;
+}
+
+.socials div:hover {
+  background-color: #9d6741;
+}
+
+.homeBanner {
+  background-color: #f4f2ee;
+}
+
+.books {
+  background-color: #eeebe5;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  transform: translateY(-7px);
+}
+
+.card img {
+  height: 250px;
+}
+
+.card .card-text {
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 42px;
+}
+
+.card a {
+  color: #9d6741;
+}
+
+.card a:hover {
+  color: #af7e5b;
+}
+
+footer {
+  background-color: #e7e4de;
+}
