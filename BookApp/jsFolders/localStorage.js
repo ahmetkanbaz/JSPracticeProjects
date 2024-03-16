@@ -37,4 +37,20 @@ class LocalStorage {
 
     books.length == 0 && UI.warning4UI("Tüm kitaplar silindi!");
   };
+
+  static updateBook2LocalStorage = function (bookId, index) {
+    let books = LocalStorage.getBooks4LocalStorage();
+    updateButtonModal.addEventListener("click", function () {
+      let newBookValue = {
+        id: bookId,
+        name: modalBookName.value,
+        summary: modalBookSummary.value,
+        date: modalBookDate.value,
+        imageUrl: modalBookImageUrl.value,
+      };
+      books.splice(index, 1, newBookValue);
+      localStorage.setItem("books", JSON.stringify(books));
+      UI.updateDisplayBooks2UI(books)
+    });
+  };
 }

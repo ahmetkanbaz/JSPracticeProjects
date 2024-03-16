@@ -16,6 +16,8 @@ addEventListeners();
 
 function addEventListeners() {
   document.addEventListener('DOMContentLoaded', LocalStorage.showBooksFromLocalStorage)
+  addNewBookButtons.forEach(button => button.addEventListener('click', UI.clearModalFormInputs))
   createBookButtonModal.addEventListener('click', Book.addBook)
   allBooks.addEventListener('click', Book.deleteBook)
+  allBooks.addEventListener('click', Book.updateBook)
 }
