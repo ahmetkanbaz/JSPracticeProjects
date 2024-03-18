@@ -9,6 +9,15 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
+::placeholder {
+  font-size: .8rem;
+  font-style: italic;
+}
+
+nav {
+  background-color: #fff0db;
+}
+
 .homeBanner {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
     url("https://ncmaz-nextjs.vercel.app/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1440778303588-435521a205bc%3Fixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26ixlib%3Drb-1.2.1%26auto%3Dformat%26fit%3Dcrop%26w%3D1950%26q%3D80&w=1080&q=75");
@@ -52,8 +61,8 @@ a {
   transform: translateY(-10px);
 }
 
-nav {
-  background-color: #fff0db;
+.blogs {
+  background-color: #FBFBFB;
 }
 
 @media screen and (max-width: 992px) {
