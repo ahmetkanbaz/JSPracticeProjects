@@ -155,6 +155,7 @@
                 type="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                id="sortBlogsDropDown"
               >
                 Sırala
               </button>
@@ -222,7 +223,7 @@
             </div>
 
             <div class="d-flex justify-content-end mt-md-4">
-              <button type="button" class="btn btn-danger px-4">
+              <button type="button" class="btn btn-danger px-4" id="clearAllFiltersButton">
                 Filtreleri Temizle
               </button>
             </div>
@@ -233,8 +234,9 @@
                 type="text"
                 class="form-control shadow-none"
                 placeholder="Blog Adına veya Yazar Adına Göre Arama Yapınız..."
+                id="searchBookInput"
               />
-              <button class="btn btn-primary px-5">Ekle</button>
+              <button class="btn btn-primary px-5" type="button" data-bs-toggle="modal" data-bs-target="#blogModal">Ekle</button>
             </div>
 
             <h5 class="border-bottom pb-2 my-3">Bloglar</h5>
@@ -272,7 +274,7 @@
             <div
               class="d-flex justify-content-md-end justify-content-center mt-3"
             >
-              <button type="button" class="btn btn-danger">
+              <button type="button" class="btn btn-danger" id="clearAllBlogs">
                 Tüm Blogları Sil
               </button>
             </div>
@@ -280,6 +282,25 @@
         </div>
       </div>
     </section>
+
+    <div class="modal fade" id="blogModal" tabindex="-1" aria-labelledby="blogModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="blogModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Blog Oluştur</button>
+            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Güncelle</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section class="py-5 whatIsBlog">
       <div class="container">
@@ -388,5 +409,8 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    <script src="./jsFolders/blogs.js"></script>
+    <script src="./jsFolders/app.js"></script>
   </body>
 </html>
