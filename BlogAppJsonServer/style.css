@@ -39,7 +39,24 @@ a {
   width: 50%;
 }
 
-@media screen and (max-width: 992px){
+.infoSection {
+  background-color: #ffe8c6;
+}
+
+.infoSection .card {
+  background-color: #e0bd8d;
+  transition: all 0.3s ease-in-out;
+}
+
+.infoSection .card:hover {
+  transform: translateY(-10px);
+}
+
+nav {
+  background-color: #fff0db;
+}
+
+@media screen and (max-width: 992px) {
   .blur {
     width: 100%;
   }
