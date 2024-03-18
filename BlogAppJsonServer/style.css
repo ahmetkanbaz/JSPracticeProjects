@@ -15,7 +15,7 @@ a {
 }
 
 nav {
-  background-color: #FFFAF0;
+  background-color: #EEEEEC;
 }
 
 .homeBanner {
@@ -62,7 +62,7 @@ nav {
 }
 
 .blogsSection {
-  background-color: #FFFAF0;
+  background-color: #F9F9F9;
 }
 
 .singleBlog {
@@ -97,6 +97,22 @@ nav {
 .whatIsBlog img {
   transform: rotate(7deg);
   width: 80%;
+}
+
+footer {
+  background-color: #EEEEEC;
+}
+
+footer a {
+  width: 35px;
+  height: 35px;
+  background-color: #DCB385;
+  color: #FFFFFF;
+  transition: all .3s ease-in-out
+}
+
+footer a:hover {
+  background-color: #B28358;
 }
 
 @media screen and (max-width: 992px) {
