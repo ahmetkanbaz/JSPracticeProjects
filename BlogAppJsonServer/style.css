@@ -15,7 +15,7 @@ a {
 }
 
 nav {
-  background-color: #fbfbfb;
+  background-color: #FFFAF0;
 }
 
 .homeBanner {
@@ -49,16 +49,20 @@ nav {
 }
 
 .infoSection {
-  background-color: #ffe8c6;
+  background-color: #FBEFD9;
 }
 
 .infoSection .card {
-  background-color: #e0bd8d;
+  background-color: #F1DABA;
   transition: all 0.3s ease-in-out;
 }
 
 .infoSection .card:hover {
   transform: translateY(-10px);
+}
+
+.blogsSection {
+  background-color: #FFFAF0;
 }
 
 .singleBlog {
@@ -86,8 +90,21 @@ nav {
   opacity: 1;
 }
 
+.whatIsBlog {
+  background-color: #FBEFD9;
+}
+
+.whatIsBlog img {
+  transform: rotate(7deg);
+  width: 80%;
+}
+
 @media screen and (max-width: 992px) {
   .blur {
     width: 100%;
+  }
+
+  .whatIsBlog img {
+    width: 90%;
   }
 }
