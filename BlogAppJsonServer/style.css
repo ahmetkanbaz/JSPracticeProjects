@@ -10,12 +10,12 @@ a {
 }
 
 ::placeholder {
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-style: italic;
 }
 
 nav {
-  background-color: #fff0db;
+  background-color: #fbfbfb;
 }
 
 .homeBanner {
@@ -24,7 +24,7 @@ nav {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 450px;
+  height: 90vh;
 }
 
 .homeBanner h1 {
@@ -38,7 +38,7 @@ nav {
 }
 
 .blur {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4.9px);
@@ -61,8 +61,29 @@ nav {
   transform: translateY(-10px);
 }
 
-.blogs {
-  background-color: #FBFBFB;
+.singleBlog {
+  overflow: hidden;
+}
+
+.singleBlog img {
+  height: 250px;
+}
+
+.blogIcons {
+  transition: all 0.3s ease-in-out;
+  transform: translateY(100px);
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.41);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.8px);
+  -webkit-backdrop-filter: blur(5.8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.singleBlog:hover .blogIcons {
+  transform: translateY(-3rem);
+  opacity: 1;
 }
 
 @media screen and (max-width: 992px) {

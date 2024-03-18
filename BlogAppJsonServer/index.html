@@ -154,11 +154,13 @@
       </div>
     </section>
 
-    <section class="py-5 blogs">
+    <section class="py-5">
       <div class="container">
         <div class="row">
-          <div class="col-md-3 border-end">
-            <div class="dropdown dropend">
+          <div
+            class="col-md-3 d-flex flex-md-column justify-content-evenly justify-content-md-start"
+          >
+            <div class="dropdown">
               <button
                 class="btn btn-secondary dropdown-toggle"
                 type="button"
@@ -175,22 +177,115 @@
               </ul>
             </div>
 
-            <h5 class="my-3 border-bottom pb-2">Blog Kategorileri</h5>
-            <div class="d-flex flex-column gap-2 blogCategories" aria-label="Checkbox toggle blog categories">
-              <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-              <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
-            
-              <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-              <label class="btn btn-outline-primary" for="btncheck2">Checkbox 2</label>
-            
-              <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-              <label class="btn btn-outline-primary" for="btncheck3">Checkbox 3</label>
+            <div class="dropdown d-block d-md-none">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Blog Kategorileri
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">A - Z</a></li>
+                <li><a class="dropdown-item" href="#">Z - A</a></li>
+                <li><a class="dropdown-item" href="#">Yeniden Eskiye</a></li>
+                <li><a class="dropdown-item" href="#">Eskiden Yeniye</a></li>
+              </ul>
+            </div>
+
+            <div class="d-none d-md-block">
+              <h5 class="my-3 border-bottom pb-2">Blog Kategorileri</h5>
+              <div
+                class="d-flex flex-column gap-2 blogCategories"
+                aria-label="Checkbox toggle blog categories"
+              >
+                <input
+                  type="checkbox"
+                  class="btn-check"
+                  id="btncheck1"
+                  autocomplete="off"
+                />
+                <label class="btn btn-outline-primary" for="btncheck1"
+                  >Checkbox 1</label
+                >
+
+                <input
+                  type="checkbox"
+                  class="btn-check"
+                  id="btncheck2"
+                  autocomplete="off"
+                />
+                <label class="btn btn-outline-primary" for="btncheck2"
+                  >Checkbox 2</label
+                >
+
+                <input
+                  type="checkbox"
+                  class="btn-check"
+                  id="btncheck3"
+                  autocomplete="off"
+                />
+                <label class="btn btn-outline-primary" for="btncheck3"
+                  >Checkbox 3</label
+                >
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-end mt-md-4">
+              <button type="button" class="btn btn-danger px-4">
+                Filtreleri Temizle
+              </button>
             </div>
           </div>
-          <div class="col-md-9">
+          <div class="col-md-9 mt-3 mt-md-0">
             <div class="d-flex gap-3">
-              <input type="text" class="form-control shadow-none" placeholder="Blog Adına veya Yazar Adına Göre Arama Yapınız...">
-              <button class="btn btn-primary px-5 d-flex gap-2 align-items-center">Ekle <span class="fa-solid fa-plus"></span></button>
+              <input
+                type="text"
+                class="form-control shadow-none"
+                placeholder="Blog Adına veya Yazar Adına Göre Arama Yapınız..."
+              />
+              <button class="btn btn-primary px-5">Ekle</button>
+            </div>
+
+            <h5 class="border-bottom pb-2 my-3">Bloglar</h5>
+
+            <div class="row blogs">
+              <div class="col-md-4 col-6">
+                <div
+                  class="d-flex flex-column justify-content-center singleBlog"
+                >
+                  <img
+                    src="https://static.wixstatic.com/media/9e18ff_880a072ecbbd43efbe03328cf06a5608~mv2.jpg/v1/crop/x_668,y_9,w_3856,h_3626/fill/w_728,h_683,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/me-2.jpg"
+                    alt="Blog Name"
+                    class="img-fluid rounded object-fit-cover"
+                  />
+                  <div
+                    class="d-flex justify-content-evenly align-items-center py-2 blogIcons"
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-primary fa-solid fa-pencil"
+                    ></button>
+                    <button
+                      type="button"
+                      class="btn btn-info fa-solid fa-eye"
+                    ></button>
+                    <button
+                      type="button"
+                      class="btn btn-danger fa-solid fa-trash"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="d-flex justify-content-md-end justify-content-center mt-3"
+            >
+              <button type="button" class="btn btn-danger">
+                Tüm Blogları Sil
+              </button>
             </div>
           </div>
         </div>
