@@ -1,7 +1,7 @@
 class Blog {
-  constructor (id, name, author, category, content, date, imageUrl) {
+  constructor (id, title, author, category, content, date, imageUrl) {
     this.id = id
-    this.name = name
+    this.title = title
     this.author = author
     this.category = category
     this.content = content
@@ -9,10 +9,21 @@ class Blog {
     this.imageUrl = imageUrl
   }
 
-  static newBlog = function () {
-    let id = new Date()
-    let name = blogNameModal.value.trim()
+  static addBlog = function () {
+    let id = Date.now()
+    let title = blogTitleModal.value.trim()
+    let author = blogAuthorModal.value.trim()
+    let category = blogCategoryModal.value.trim()
+    let content = blogContentModal.value.trim()
+    let date = blogDateModal.value
+    let imageUrl = blogImageUrlModal.value.trim()
 
-    console.log(name)
+    if (!title || !author || !category || !content || !imageUrl) UI.alert('* işaretli alanları doldurunuz!')
+    else {
+      let newBlog = {
+        id, title, author, category, content, date, imageUrl
+      }
+      UI.addNewBlog2UI(id, title, imageUrl)
+    }
   }
 }

@@ -5,20 +5,24 @@ const clearAllFiltersButton = document.getElementById('clearAllFiltersButton')
 
 const searchBookInput = document.getElementById('searchBookInput')
 
-const blogs = document.querySelector('blogs')
+const blogs = document.querySelector('.blogs')
 const clearAllBlogs = document.getElementById('clearAllBlogs')
 
-const blogNameModal = document.getElementById ('blogNameModal')
-
-
+const blogTitleModal = document.getElementById ('blogTitleModal')
+const blogAuthorModal = document.getElementById('blogAuthorModal')
+const blogCategoryModal = document.getElementById('blogCategoryModal')
+const blogContentModal = document.getElementById('blogContentModal')
+const blogDateModal = document.getElementById('blogDateModal')
+const blogImageUrlModal = document.getElementById('blogImageUrlModal')
 const createNewBlogButtonModal = document.getElementById('createNewBlogButtonModal')
+const updateBlogButtonModal = document.getElementById('updateBlogButtonModal')
 
 addEventListeners()
 
-function addEventListeners () {
-  document.addEventListener('DOMContentLoaded', () => {
-    console.log('Hello World!')
-  })
+const crud = new Crud ('http://localhost:3000/blogs')
 
-  createNewBlogButtonModal.addEventListener('click', Blog.newBlog)
+function addEventListeners () {
+  document.addEventListener('DOMContentLoaded', Request.showAllBlogsFromJsonServer)
+
+  createNewBlogButtonModal.addEventListener('click', Blog.addBlog)
 }

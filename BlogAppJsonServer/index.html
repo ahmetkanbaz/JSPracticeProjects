@@ -293,15 +293,35 @@
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="blogNameModal" class="form-label">Title</label>
-                <input type="text" class="form-control shadow-none" id="blogNameModal" placeholder="Blog başlığını giriniz...">
+                <label for="blogTitleModal" class="form-label">* Başlık</label>
+                <input type="text" class="form-control shadow-none" id="blogTitleModal" placeholder="Blog başlığını giriniz...">
+              </div>
+              <div class="mb-3">
+                <label for="blogAuthorModal" class="form-label">* Yazar Adı - Soyadı</label>
+                <input type="text" class="form-control shadow-none" id="blogAuthorModal" placeholder="Blog yazarını giriniz...">
+              </div>
+              <div class="mb-3">
+                <label for="blogCategoryModal" class="form-label">* Kategori</label>
+                <input type="text" class="form-control shadow-none" id="blogCategoryModal" placeholder="Blog kategorisini giriniz...">
+              </div>
+              <div class="mb-3">
+                <label for="blogContentModal" class="form-label">* İçerik</label>
+                  <textarea name="blogContentModal" id="blogContentModal" rows="7" class="form-control shadow-none" placeholder="Blogu giriniz..."></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="blogDateModal" class="form-label">Tarih</label>
+                <input type="date" class="form-control shadow-none" id="blogDateModal" placeholder="Blog yazılma tarihini giriniz...">
+              </div>
+              <div class="mb-3">
+                <label for="blogImageUrlModal" class="form-label">* Resim URL'si</label>
+                <input type="url" class="form-control shadow-none" id="blogImageUrlModal" placeholder="Blog resim URL'sini giriniz...">
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="createNewBlogButtonModal">Blog Oluştur</button>
-            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Güncelle</button>
+            <button type="button" class="btn btn-warning" data-bs-dismiss="modal" id="updateBlogButtonModal">Güncelle</button>
           </div>
         </div>
       </div>
@@ -415,6 +435,9 @@
       crossorigin="anonymous"
     ></script>
 
+    <script src="./jsFolders/ui.js"></script>
+    <script src="./jsFolders/crud.js"></script>
+    <script src="./jsFolders/request.js"></script>
     <script src="./jsFolders/blogs.js"></script>
     <script src="./jsFolders/app.js"></script>
   </body>
