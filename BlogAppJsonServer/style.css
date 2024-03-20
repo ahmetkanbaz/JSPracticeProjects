@@ -65,17 +65,13 @@ nav {
   background-color: #F9F9F9;
 }
 
-.singleBlog {
-  overflow: hidden;
-}
-
 .singleBlog img {
   height: 250px;
 }
 
 .blogIcons {
   transition: all 0.3s ease-in-out;
-  transform: translateY(100px);
+  bottom: -3rem;
   opacity: 0;
   background: rgba(255, 255, 255, 0.41);
   border-radius: 16px;

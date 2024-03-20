@@ -8,4 +8,11 @@ class Blog {
     this.date = date
     this.imageUrl = imageUrl
   }
+
+  static newBlog = function () {
+    let id = new Date()
+    let name = blogNameModal.value.trim()
+
+    console.log(name)
+  }
 }
