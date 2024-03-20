@@ -5,4 +5,8 @@ class Request {
       blogs.map((blog) => UI.addNewBlog2UI(blog.id, blog.title, blog.imageUrl));
     }
   };
+
+  static addNewBlog2JsonServer = async function(blog) {
+    const response = await crud.post(blog)
+  }
 }
