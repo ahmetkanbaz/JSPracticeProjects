@@ -93,10 +93,10 @@ class UI {
   };
 
   static displayBlogsCategories = async function () {
-    const blogs = await crud.get()
+    const blogs = await crud.get();
     let categories = [];
-    blogCategories.innerHTML = ''
-    blogCategoriesMobile.innerHTML = ''
+    blogCategories.innerHTML = "";
+    blogCategoriesMobile.innerHTML = "";
 
     if (blogs.length > 0) {
       blogs.map((blog) => categories.push(blog.category));
@@ -128,5 +128,12 @@ class UI {
           </label>
         </div>
       </li>`;
+  };
+
+  static displayFilterBlogs = function (tempBlogs) {
+    blogs.innerHTML = "";
+    tempBlogs.map((blog) =>
+      UI.addNewBlog2UI(blog.id, blog.title, blog.imageUrl)
+    );
   };
 }

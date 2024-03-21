@@ -41,4 +41,7 @@ function addEventListeners () {
   blogs.addEventListener('click', Blog.detailBlog)
   blogs.addEventListener('click', Blog.deleteBlog)
   blogs.addEventListener('click', Blog.showUpdateBlogDetails)
+  searchBookInput.addEventListener('keyup', Blog.searchBlog)
+  sortDropItems.forEach(item => item.addEventListener('click', Blog.sortBlog))
+
 }

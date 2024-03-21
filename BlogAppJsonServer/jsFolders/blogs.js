@@ -63,4 +63,13 @@ class Blog {
     }
     e.preventDefault();
   };
+
+  static searchBlog = function (e) {
+    Filter.searchBlogs2Filter(e.target.value)
+  }
+
+  static sortBlog = function (e) {
+    Filter.sortBlogs2Filter(e.target.textContent)
+    e.preventDefault()
+  }
 }
