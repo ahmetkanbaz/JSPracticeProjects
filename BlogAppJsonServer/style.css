@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+::placeholder {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+textarea {
+  resize: none;
+}
+
+nav {
+  background-color: #EEEEEC;
+}
+
+.homeBanner {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+    url("https://ncmaz-nextjs.vercel.app/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1440778303588-435521a205bc%3Fixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26ixlib%3Drb-1.2.1%26auto%3Dformat%26fit%3Dcrop%26w%3D1950%26q%3D80&w=1080&q=75");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+}
+
+.homeBanner h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 5px;
+}
+
+.homeBanner p {
+  font-size: 1.1rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.blur {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.9px);
+  -webkit-backdrop-filter: blur(4.9px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transform: rotate(-7deg);
+  width: 50%;
+}
+
+.infoSection {
+  background-color: #FBEFD9;
+}
+
+.infoSection .card {
+  background-color: #F1DABA;
+  transition: all 0.3s ease-in-out;
+}
+
+.infoSection .card:hover {
+  transform: translateY(-10px);
+}
+
+.blogsSection {
+  background-color: #F9F9F9;
+}
+
+.singleBlog img {
+  height: 250px;
+}
+
+.blogIcons {
+  transition: all 0.3s ease-in-out;
+  bottom: -3rem;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.41);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.8px);
+  -webkit-backdrop-filter: blur(5.8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.singleBlog:hover .blogIcons {
+  transform: translateY(-3rem);
+  opacity: 1;
+}
+
+.whatIsBlog {
+  background-color: #FBEFD9;
+}
+
+.whatIsBlog img {
+  transform: rotate(7deg);
+  width: 80%;
+}
+
+footer {
+  background-color: #EEEEEC;
+}
+
+footer a {
+  width: 35px;
+  height: 35px;
+  background-color: #DCB385;
+  color: #FFFFFF;
+  transition: all .3s ease-in-out
+}
+
+footer a:hover {
+  background-color: #B28358;
+}
+
+#blogInfoModal label {
+  margin-bottom: 0;
+}
+
+#blogInfoModal p {
+  font-size: .9rem;
+}
+
+@media screen and (max-width: 992px) {
+  .blur {
+    width: 100%;
+  }
+
+  .whatIsBlog img {
+    width: 90%;
+  }
+}

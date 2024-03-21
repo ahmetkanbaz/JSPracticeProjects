@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IdeaVista</title>
+
+    <link
+      rel="shortcut icon"
+      href="./assets/ideavistablog.png"
+      type="image/x-icon"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg py-2 sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img
+            src="./assets/ideavistalogo.png"
+            alt="IdeaVista Logo"
+            class="img-fluid"
+            width="110px"
+        /></a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#ideaVistaNavbar"
+          aria-controls="ideaVistaNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="ideaVistaNavbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Anasayfa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Hakkımızda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">İletişim</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sıkça Sorulan Sorular</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="py-5 homeBanner d-flex align-items-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h1 class="text-white">IdeaVista</h1>
+            <p class="mb-0 text-white">
+              IdeaVista, yaratıcı fikirlerinizi keşfetmenizi ve paylaşmanızı
+              sağlayan yeni bir blog deneyimi.
+            </p>
+          </div>
+          <div
+            class="col-md-6 d-flex flex-column align-items-center mt-3 mt-md-0"
+          >
+            <div class="blur p-3">
+              <h5>Blog Yönetimiyle Zenginleştirilmiş Deneyim</h5>
+              <p>
+                Kullanıcıların kolaylıkla blog ekleyebileceği, silip
+                düzenleyebileceği ve istedikleri içerikleri filtreleyebileceği
+                interaktif bir platform sunar.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 infoSection">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="card border-0">
+              <div class="card-body">
+                <h5 class="card-title text-center">Ekleme</h5>
+                <p class="card-text">
+                  Ideavista ile blog eklemek kolay ve hızlıdır, içerik
+                  oluşturmak için sadece birkaç adıma ihtiyacınız vardır.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mt-3 mt-sm-0">
+            <div class="card border-0">
+              <div class="card-body">
+                <h5 class="card-title text-center">Silme</h5>
+                <p class="card-text">
+                  Ideavista platformunda blog silme işlemi basittir. İstenmeyen
+                  içerikleri kolayca belirleyip kaldırabilirsiniz.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 my-3 my-md-0">
+            <div class="card border-0">
+              <div class="card-body">
+                <h5 class="card-title text-center">Güncelleme</h5>
+                <p class="card-text">
+                  Ideavista'da blog içeriğinizi istediğiniz düzenleyebilir ve
+                  güncellemeleri hızlıca yayınlayabilirsiniz.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mt-0 mt-sm-3 mt-md-0">
+            <div class="card border-0">
+              <div class="card-body">
+                <h5 class="card-title text-center">Filtreleme</h5>
+                <p class="card-text">
+                  Ideavista'da içerikleri hızlıca bulmanızı sağlayan etkili
+                  filtreleme seçenekleri sunar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 blogsSection">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-md-3 d-flex flex-wrap gap-3 gap-md-0 flex-md-column justify-content-evenly justify-content-md-start"
+          >
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                id="sortBlogsDropDown"
+              >
+                Sırala
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item sortItems" href="#">A - Z</a></li>
+                <li><a class="dropdown-item sortItems" href="#">Z - A</a></li>
+                <li>
+                  <a class="dropdown-item sortItems" href="#">Yeniden Eskiye</a>
+                </li>
+                <li>
+                  <a class="dropdown-item sortItems" href="#">Eskiden Yeniye</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="d-none d-md-block">
+              <h5 class="my-3 border-bottom pb-2">Blog Kategorileri</h5>
+              <div
+                class="d-flex flex-column gap-2 blogCategories"
+                aria-label="Checkbox toggle blog categories"
+              ></div>
+            </div>
+
+            <div class="d-block d-md-none">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Blog Kategorileri
+                </button>
+                <ul class="dropdown-menu blogCategoriesMobile"></ul>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-end mt-md-4">
+              <button
+                type="button"
+                class="btn btn-danger px-4"
+                id="clearAllFiltersButton"
+              >
+                Filtreleri Temizle
+              </button>
+            </div>
+          </div>
+
+          <div class="col-md-9 mt-3 mt-md-0">
+            <div class="d-flex gap-3">
+              <input
+                type="text"
+                class="form-control shadow-none"
+                placeholder="Blog Başlığına veya Yazar Adına Göre Arama Yapınız..."
+                id="searchBookInput"
+              />
+              <button
+                class="btn btn-primary px-5"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#blogModal"
+                id="addBlogUI"
+              >
+                Ekle
+              </button>
+            </div>
+
+            <h5 class="border-bottom pb-2 my-3">Bloglar</h5>
+
+            <div class="row row-gap-3 blogs"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div
+      class="modal fade"
+      id="blogModal"
+      tabindex="-1"
+      aria-labelledby="blogModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="blogModalLabel">Modal title</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="blogTitleModal" class="form-label">* Başlık</label>
+              <input
+                type="text"
+                class="form-control shadow-none"
+                id="blogTitleModal"
+                placeholder="Blog başlığını giriniz..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="blogAuthorModal" class="form-label"
+                >* Yazar Adı - Soyadı</label
+              >
+              <input
+                type="text"
+                class="form-control shadow-none"
+                id="blogAuthorModal"
+                placeholder="Blog yazarını giriniz..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="blogCategoryModal" class="form-label"
+                >* Kategori</label
+              >
+              <input
+                type="text"
+                class="form-control shadow-none"
+                id="blogCategoryModal"
+                placeholder="Blog kategorisini giriniz..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="blogContentModal" class="form-label">* İçerik</label>
+              <textarea
+                name="blogContentModal"
+                id="blogContentModal"
+                rows="7"
+                class="form-control shadow-none"
+                placeholder="Blogu giriniz..."
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="blogDateModal" class="form-label">Tarih</label>
+              <input
+                type="date"
+                class="form-control shadow-none"
+                id="blogDateModal"
+                placeholder="Blog yazılma tarihini giriniz..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="blogImageUrlModal" class="form-label"
+                >* Resim URL'si</label
+              >
+              <input
+                type="url"
+                class="form-control shadow-none"
+                id="blogImageUrlModal"
+                placeholder="Blog resim URL'sini giriniz..."
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Kapat
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              id="createNewBlogButtonModal"
+            >
+              Blog Oluştur
+            </button>
+            <button
+              type="button"
+              class="btn btn-warning"
+              data-bs-dismiss="modal"
+              id="updateBlogButtonModal"
+            >
+              Güncelle
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="blogInfoModal"
+      tabindex="-1"
+      aria-labelledby="blogInfoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="blogInfoModalLabel">
+              Blog Detayları
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="blogInfoModalTitleModal" class="form-label"
+                >* Başlık</label
+              >
+              <p class="mb-0" id="blogInfoModalTitleModal"></p>
+            </div>
+            <div class="mb-3">
+              <label for="blogInfoModalAuthorModal" class="form-label"
+                >* Yazar Adı - Soyadı</label
+              >
+              <p class="mb-0" id="blogInfoModalAuthorModal"></p>
+            </div>
+            <div class="mb-3">
+              <label for="blogInfoModalCategoryModal" class="form-label"
+                >* Kategori</label
+              >
+              <p class="mb-0" id="blogInfoModalCategoryModal"></p>
+            </div>
+            <div class="mb-3">
+              <label for="blogInfoModalContentModal" class="form-label"
+                >* İçerik</label
+              >
+              <p id="blogInfoModalContentModal" class="mb-0"></p>
+            </div>
+            <div class="mb-3">
+              <label for="blogInfoModalDateModal" class="form-label"
+                >Tarih</label
+              >
+              <p class="mb-0" id="blogInfoModalDateModal"></p>
+            </div>
+            <div class="mb-3">
+              <label for="blogInfoModalImageUrlModal" class="form-label"
+                >* Resim URL'si</label
+              >
+              <p class="mb-0" id="blogInfoModalImageUrlModal"></p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Kapat
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-5 whatIsBlog">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 d-flex justify-content-center">
+            <img
+              src="https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+              class="rounded-4 img-fluid"
+            />
+          </div>
+
+          <div class="col-md-6 mt-5 mt-md-0 text-md-end">
+            <h3>Blog Nedir?</h3>
+            <p class="mb-0">
+              Bir blog, kişisel veya profesyonel bir web sitesinde düzenli
+              olarak yayınlanan yazıları içeren, genellikle kronolojik bir
+              sırayla düzenlenen bir çevrimiçi günlüktür. Bir blog, birçok
+              farklı konuda içerik sunabilir, kişisel deneyimlerin
+              paylaşılmasından profesyonel tavsiyelere, haberlerden eğlenceye
+              kadar geniş bir yelpazeye sahip olabilir. Bloglar, bilgi
+              paylaşımını, iletişimi ve topluluk etkileşimini teşvik ederken
+              aynı zamanda yazarlar için bir ses olma ve kişisel marka oluşturma
+              fırsatı sunar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="pt-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-4 col-sm-6">
+            <img
+              src="./assets/ideavistablog.png"
+              alt="IdeaVista Footer"
+              class="img-fluid"
+              width="250px"
+            />
+          </div>
+          <div class="col-md-4 col-sm-6 mt-3 mt-sm-0">
+            <h5 class="border-bottom pb-3">IdeaVista Hakkında</h5>
+            <p class="mb-0">
+              İdeavista, yaratıcı düşüncelerinizi paylaşmak için tasarlanmış
+              dinamik bir blog platformudur. Burada, özgün içerikler
+              oluşturabilir, ilgi alanlarınızı paylaşabilir ve toplulukla
+              etkileşimde bulunabilirsiniz. İster yeni bir hobi keşfedin, ister
+              deneyimlerinizi paylaşın, Ideavista sizin için ideal bir alan
+              sunar.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mt-3 mt-md-0">
+            <h5 class="border-bottom pb-3">İletişim Bilgileri</h5>
+            <div class="d-flex align-items-center gap-3 ps-3 socialIcons">
+              <a
+                href="https://github.com/ahmetkanbaz"
+                target="_blank"
+                class="rounded-circle d-flex align-items-center justify-content-center"
+              >
+                <span class="fa-brands fa-github"></span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ahmet-kanbaz-156002242/"
+                target="_blank"
+                class="rounded-circle d-flex align-items-center justify-content-center"
+              >
+                <span class="fa-brands fa-linkedin-in"></span>
+              </a>
+              <a
+                href="https://medium.com/@ahmetkanbaz"
+                target="_blank"
+                class="rounded-circle d-flex align-items-center justify-content-center"
+              >
+                <span class="fa-brands fa-medium"></span>
+              </a>
+              <a
+                href="https://www.instagram.com/ahmetkanbazz/"
+                target="_blank"
+                class="rounded-circle d-flex align-items-center justify-content-center"
+              >
+                <span class="fa-brands fa-instagram"></span>
+              </a>
+              <a
+                href="https://twitter.com/ahmetkanbazz"
+                target="_blank"
+                class="rounded-circle d-flex align-items-center justify-content-center"
+              >
+                <span class="fa-brands fa-x-twitter"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="py-4 border-top border-2">
+        <p class="text-center mb-0">
+          © 2024 Ideavista. Tüm hakları saklıdır. Geliştirici: Ahmet Kanbaz
+        </p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./jsFolders/crud.js"></script>
+    <script src="./jsFolders/ui.js"></script>
+    <script src="./jsFolders/request.js"></script>
+    <script src="./jsFolders/filter.js"></script>
+    <script src="./jsFolders/blogs.js"></script>
+    <script src="./jsFolders/app.js"></script>
+  </body>
+</html>
