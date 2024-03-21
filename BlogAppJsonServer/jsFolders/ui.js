@@ -15,6 +15,14 @@ class UI {
     updateBlogButtonModal.classList.add("d-none");
   };
 
+  static showAlertMessage2UI = function (message) {
+    const newAlertDiv = document.createElement('div')
+    newAlertDiv.className = 'alert alert-danger py-4 text-center'
+    newAlertDiv.role = 'alert'
+    newAlertDiv.textContent = message
+    blogs.appendChild(newAlertDiv)
+  }
+
   static addNewBlog2UI = function (id, title, imageUrl) {
     const newBlogCol = document.createElement("div");
     newBlogCol.id = id;
@@ -61,8 +69,10 @@ class UI {
     blogInfoModalImageUrlModal.textContent = imageUrl;
   };
 
-  static deleteBlog2UI = function (blog) {
+  static deleteBlog2UI = async function (blog) {
     blog.remove();
+    const blogs = await crud.get()
+    if (blogs.length == 0) UI.showAlertMessage2UI('Tüm bloglar silindi!')
   };
 
   static showUpdateBlogDetails2UI = function (blog) {
@@ -132,4 +142,11 @@ class UI {
       UI.addNewBlog2UI(blog.id, blog.title, blog.imageUrl)
     );
   };
+
+  static resetFilterItems2UI = function () {
+    searchBookInput.value = ''
+    sortBlogsDropDown.textContent = 'Sırala'
+    const checkeds = document.querySelectorAll('input[type="checkbox"]')
+    checkeds.forEach((checkbox) => checkbox.checked ? checkbox.checked = false : null)
+  }
 }

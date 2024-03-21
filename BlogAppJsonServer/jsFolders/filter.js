@@ -62,10 +62,18 @@ class Filter {
     }
 
     UI.displayFilterBlogs(blogs);
-    if (blogs.length == 0) console.log("Bulunamadı.");
+    if (blogs.length == 0) UI.showAlertMessage2UI('Aradığınız blog bulunamadı!')
   };
 
   static filterBlogs4CheckCategories = function (blogs, tempArray) {
     return blogs.filter(blog => tempArray.includes(blog.category))
+  }
+
+  static resetFilterItems2Filter = function () {
+    search = ''
+    categoryList = []
+    dropDownCategoryList = []
+    sort = ''
+    Filter.filterBlogs()
   }
 }

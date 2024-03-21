@@ -69,6 +69,7 @@ class Blog {
   }
 
   static sortBlog = function (e) {
+    sortBlogsDropDown.textContent = e.target.textContent
     Filter.sortBlogs2Filter(e.target.textContent)
     e.preventDefault()
   }
@@ -80,6 +81,12 @@ class Blog {
     else {
       Filter.categoryList2Filter('', e.target.checked, e.target.value)
     }
+    e.preventDefault()
+  }
+
+  static resetFilters = function (e) {
+    UI.resetFilterItems2UI()
+    Filter.resetFilterItems2Filter()
     e.preventDefault()
   }
 }

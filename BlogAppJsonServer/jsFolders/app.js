@@ -6,7 +6,6 @@ const clearAllFiltersButton = document.getElementById('clearAllFiltersButton')
 const searchBookInput = document.getElementById('searchBookInput')
 
 const blogs = document.querySelector('.blogs')
-const clearAllBlogs = document.getElementById('clearAllBlogs')
 
 const blogModalLabel = document.getElementById('blogModalLabel')
 const blogTitleModal = document.getElementById ('blogTitleModal')
@@ -45,4 +44,5 @@ function addEventListeners () {
   sortDropItems.forEach(item => item.addEventListener('click', Blog.sortBlog))
   blogCategories.addEventListener('change', Blog.checkedCategoryBlog)
   blogCategoriesMobile.addEventListener('change', Blog.checkedCategoryBlog)
+  clearAllFiltersButton.addEventListener('click', Blog.resetFilters)
 }
