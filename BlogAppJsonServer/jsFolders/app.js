@@ -22,9 +22,10 @@ addEventListeners()
 const crud = new Crud ('http://localhost:3000/blogs')
 
 function addEventListeners () {
-  document.addEventListener('DOMContentLoaded', Request.showAllBlogsFromJsonServer)
+  document.addEventListener('DOMContentLoaded', Blog.showAllBlogsFromJsonServer)
 
   createNewBlogButtonModal.addEventListener('click', Blog.addBlog)
   blogs.addEventListener('click', Blog.detailBlog)
   blogs.addEventListener('click', Blog.deleteBlog)
+  blogs.addEventListener('click', Blog.updateBlog)
 }

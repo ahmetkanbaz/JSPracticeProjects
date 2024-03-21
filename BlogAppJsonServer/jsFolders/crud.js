@@ -37,4 +37,17 @@ class Crud {
     if (response.ok) UI.alert ('Blog başarıyla silindi.')
     else UI.alert('Blog silinirken bir hatayla karşılaşıldı!')
   }
+
+  async put (blog) {
+    const response = await fetch (`${this.url}/${blog.id}`, {
+      method: 'PUT',
+      body: JSON.stringify(blog),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    })
+
+    if (response.ok && response.status == 200) return await response.json()
+    else UI.alert('Güncelleme esnasında bir hatayla karşılaşıldı!')
+  }
 }
