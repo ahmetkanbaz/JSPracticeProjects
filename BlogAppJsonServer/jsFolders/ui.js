@@ -10,9 +10,9 @@ class UI {
     blogContentModal.value = "";
     blogDateModal.value = "";
     blogImageUrlModal.value = "";
-    blogModalLabel.textContent = 'Blog Ekle'
-    createNewBlogButtonModal.classList.remove('d-none')
-    updateBlogButtonModal.classList.add('d-none')
+    blogModalLabel.textContent = "Blog Ekle";
+    createNewBlogButtonModal.classList.remove("d-none");
+    updateBlogButtonModal.classList.add("d-none");
   };
 
   static addNewBlog2UI = function (id, title, imageUrl) {
@@ -59,7 +59,7 @@ class UI {
     blogInfoModalContentModal.textContent = content;
     blogInfoModalDateModal.textContent = date;
     blogInfoModalImageUrlModal.textContent = imageUrl;
-  }
+  };
 
   static deleteBlog2UI = function (blog) {
     blog.remove();
@@ -73,11 +73,11 @@ class UI {
     blogContentModal.value = content;
     blogDateModal.value = date;
     blogImageUrlModal.value = imageUrl;
-    blogModalLabel.textContent = 'Blog Güncelle'
-    createNewBlogButtonModal.classList.add('d-none')
-    updateBlogButtonModal.classList.remove('d-none')
+    blogModalLabel.textContent = "Blog Güncelle";
+    createNewBlogButtonModal.classList.add("d-none");
+    updateBlogButtonModal.classList.remove("d-none");
 
-    updateBlogButtonModal.addEventListener('click', (e) => {
+    updateBlogButtonModal.addEventListener("click", (e) => {
       let updateBlog = {
         id: blog.id,
         title: blogTitleModal.value,
@@ -85,10 +85,48 @@ class UI {
         category: blogCategoryModal.value,
         content: blogContentModal.value,
         date: blogDateModal.value,
-        imageUrl: blogImageUrlModal.value
-      }
-      Request.updateBlogFromJsonServer(updateBlog)
-      e.preventDefault()
-    })
+        imageUrl: blogImageUrlModal.value,
+      };
+      Request.updateBlogFromJsonServer(updateBlog);
+      e.preventDefault();
+    });
+  };
+
+  static displayBlogsCategories = async function () {
+    const blogs = await crud.get()
+    let categories = [];
+    blogCategories.innerHTML = ''
+    blogCategoriesMobile.innerHTML = ''
+
+    if (blogs.length > 0) {
+      blogs.map((blog) => categories.push(blog.category));
+    }
+
+    const uniqueCategories = [...new Set(categories)];
+    uniqueCategories.map((categoryName) => UI.createNewCategory(categoryName));
+  };
+
+  static createNewCategory = function (categoryName) {
+    blogCategories.innerHTML += `<input
+    type="checkbox"
+    class="btn-check"
+    id=${categoryName}
+    autocomplete="off"
+  />
+  <label class="btn btn-outline-primary" for=${categoryName}
+    >${categoryName}</label
+  >`;
+    blogCategoriesMobile.innerHTML += `<li class = 'ps-1'>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id=${categoryName}
+          />
+          <label class="form-check-label" for=${categoryName}>
+            ${categoryName}
+          </label>
+        </div>
+      </li>`;
   };
 }

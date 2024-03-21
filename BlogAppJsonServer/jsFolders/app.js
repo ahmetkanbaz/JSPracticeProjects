@@ -27,13 +27,15 @@ const blogInfoModalContentModal = document.getElementById('blogInfoModalContentM
 const blogInfoModalDateModal = document.getElementById('blogInfoModalDateModal')
 const blogInfoModalImageUrlModal = document.getElementById('blogInfoModalImageUrlModal')
 
+const blogCategories = document.querySelector('.blogCategories')
+const blogCategoriesMobile = document.querySelector('.blogCategoriesMobile')
+
 addEventListeners()
 
 const crud = new Crud ('http://localhost:3000/blogs')
 
 function addEventListeners () {
   document.addEventListener('DOMContentLoaded', Request.showAllBlogsFromJsonServer)
-
   createNewBlogButtonModal.addEventListener('click', Blog.addBlog)
   addBlogUI.addEventListener('click', UI.clearModalInputs)
   blogs.addEventListener('click', Blog.detailBlog)

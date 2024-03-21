@@ -26,7 +26,7 @@ class Crud {
   async getSingleBlog(id) {
     const response = await fetch(`${this.url}/${id}`);
     if (response.ok && response.status == 200) return response.json();
-    else UI.alert('Bir hatayla karşılaşıldı!')
+    else return 'Bir hatayla karşılaşıldı!'
   }
 
   async deleteSingleBlog (id) {
@@ -34,8 +34,8 @@ class Crud {
       method: 'DELETE'
     })
 
-    if (response.ok) UI.alert ('Blog başarıyla silindi.')
-    else UI.alert('Blog silinirken bir hatayla karşılaşıldı!')
+    if (response.ok) return 'Blog başarıyla silindi.'
+    else return 'Blog silinirken bir hatayla karşılaşıldı!'
   }
 
   async put (blog) {
@@ -48,6 +48,6 @@ class Crud {
     })
 
     if (response.ok && response.status == 200) return await response.json()
-    else UI.alert('Güncelleme esnasında bir hatayla karşılaşıldı!')
+    else return 'Güncelleme esnasında bir hatayla karşılaşıldı!'
   }
 }
