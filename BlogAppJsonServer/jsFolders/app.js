@@ -8,6 +8,7 @@ const searchBookInput = document.getElementById('searchBookInput')
 const blogs = document.querySelector('.blogs')
 const clearAllBlogs = document.getElementById('clearAllBlogs')
 
+const blogModalLabel = document.getElementById('blogModalLabel')
 const blogTitleModal = document.getElementById ('blogTitleModal')
 const blogAuthorModal = document.getElementById('blogAuthorModal')
 const blogCategoryModal = document.getElementById('blogCategoryModal')
@@ -17,6 +18,8 @@ const blogImageUrlModal = document.getElementById('blogImageUrlModal')
 const createNewBlogButtonModal = document.getElementById('createNewBlogButtonModal')
 const updateBlogButtonModal = document.getElementById('updateBlogButtonModal')
 
+const addBlogUI = document.getElementById('addBlogUI')
+
 addEventListeners()
 
 const crud = new Crud ('http://localhost:3000/blogs')
@@ -25,6 +28,7 @@ function addEventListeners () {
   document.addEventListener('DOMContentLoaded', Blog.showAllBlogsFromJsonServer)
 
   createNewBlogButtonModal.addEventListener('click', Blog.addBlog)
+  addBlogUI.addEventListener('click', UI.clearModalInputs)
   blogs.addEventListener('click', Blog.detailBlog)
   blogs.addEventListener('click', Blog.deleteBlog)
   blogs.addEventListener('click', Blog.updateBlog)

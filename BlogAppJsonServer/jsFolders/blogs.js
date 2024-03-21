@@ -20,6 +20,7 @@ class Blog {
   };
 
   static addBlog = async function (e) {
+    UI.clearModalInputs()
     let id = Date.now();
     let title = blogTitleModal.value.trim();
     let author = blogAuthorModal.value.trim();

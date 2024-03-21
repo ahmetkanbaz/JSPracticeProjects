@@ -10,6 +10,9 @@ class UI {
     blogContentModal.value = "";
     blogDateModal.value = "";
     blogImageUrlModal.value = "";
+    blogModalLabel.textContent = 'Blog Ekle'
+    createNewBlogButtonModal.classList.remove('d-none')
+    updateBlogButtonModal.classList.add('d-none')
   };
 
   static addNewBlog2UI = function (id, title, imageUrl) {
@@ -58,6 +61,8 @@ class UI {
     blogContentModal.value = content;
     blogDateModal.value = date;
     blogImageUrlModal.value = imageUrl;
-    createNewBlogButtonModal.classList.add("d-none");
+    blogModalLabel.textContent = 'Blog Güncelle'
+    createNewBlogButtonModal.classList.add('d-none')
+    updateBlogButtonModal.classList.remove('d-none')
   };
 }
