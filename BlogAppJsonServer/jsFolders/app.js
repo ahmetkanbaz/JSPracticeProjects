@@ -25,4 +25,6 @@ function addEventListeners () {
   document.addEventListener('DOMContentLoaded', Request.showAllBlogsFromJsonServer)
 
   createNewBlogButtonModal.addEventListener('click', Blog.addBlog)
+  blogs.addEventListener('click', Blog.detailBlog)
+  blogs.addEventListener('click', Blog.deleteBlog)
 }

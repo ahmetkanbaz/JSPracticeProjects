@@ -18,9 +18,9 @@ class Blog {
     let date = blogDateModal.value;
     let imageUrl = blogImageUrlModal.value.trim();
     
-    // if (!title || !author || !category || !content || !imageUrl)
-    //   UI.alert("* işaretli alanları doldurunuz!");
-    // else {
+    if (!title || !author || !category || !content || !imageUrl)
+      UI.alert("* işaretli alanları doldurunuz!");
+    else {
       let newBlog = new Blog(
         id,
         title,
@@ -32,8 +32,25 @@ class Blog {
       );
       UI.addNewBlog2UI(id, title, imageUrl);
       Request.addNewBlog2JsonServer(newBlog);
-    // }
-
+    }
     e.preventDefault()
   };
+
+  static detailBlog = function (e) {
+    if (e.target.classList.contains('fa-eye')) {
+      const id = e.target.parentElement.parentElement.parentElement.id
+      Request.getDetailBlogFromJsonServer(id)
+    }
+    e.preventDefault()
+  }
+
+  static deleteBlog = function (e) {
+    if (e.target.classList.contains ('fa-trash')) {
+      if (confirm('Blogu silmek istediğinize emin misiniz?')) {
+        UI.deleteBlog2UI(e.target.parentElement.parentElement.parentElement)
+        Request.deleteBlogFromJsonServer(e.target.parentElement.parentElement.parentElement.id)
+      }
+    }
+    e.preventDefault()
+  }
 }

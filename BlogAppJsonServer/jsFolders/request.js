@@ -9,4 +9,13 @@ class Request {
   static addNewBlog2JsonServer = async function(blog) {
     const response = await crud.post(blog)
   }
+
+  static getDetailBlogFromJsonServer = async function (id) {
+    const response = await crud.getSingleBlog(id)
+    console.log (response)
+  }
+
+  static deleteBlogFromJsonServer = async function (id) {
+    await crud.deleteSingleBlog(id)
+  }
 }

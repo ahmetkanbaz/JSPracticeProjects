@@ -44,4 +44,8 @@ class UI {
 
   blogs.appendChild(newBlogCol)
   };
+
+  static deleteBlog2UI = function (blog) {
+    blog.remove()
+  }
 }

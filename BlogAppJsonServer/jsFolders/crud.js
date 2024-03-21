@@ -22,4 +22,19 @@ class Crud {
     if (response.ok) return await response.json();
     else throw new Error("Bir hatayla karşılaşıldı!");
   }
+
+  async getSingleBlog(id) {
+    const response = await fetch(`${this.url}/${id}`);
+    if (response.ok && response.status == 200) return response.json();
+    else UI.alert('Bir hatayla karşılaşıldı!')
+  }
+
+  async deleteSingleBlog (id) {
+    const response = await fetch(`${this.url}/${id}`, {
+      method: 'DELETE'
+    })
+
+    if (response.ok) UI.alert ('Blog başarıyla silindi.')
+    else UI.alert('Blog silinirken bir hatayla karşılaşıldı!')
+  }
 }
