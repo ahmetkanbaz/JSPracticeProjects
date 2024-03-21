@@ -52,7 +52,6 @@ class UI {
 
   static showUpdateBlogDetails2UI = function (blog) {
     const { title, author, category, content, date, imageUrl } = blog;
-    console.log(date)
     blogTitleModal.value = title;
     blogAuthorModal.value = author;
     blogCategoryModal.value = category;
