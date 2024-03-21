@@ -1,5 +1,5 @@
 const sortBlogsDropDown = document.getElementById('sortBlogsDropDown')
-const sortDropItems = document.querySelectorAll('.dropdown-item')
+const sortDropItems = document.querySelectorAll('.sortItems')
 
 const clearAllFiltersButton = document.getElementById('clearAllFiltersButton')
 
@@ -43,5 +43,6 @@ function addEventListeners () {
   blogs.addEventListener('click', Blog.showUpdateBlogDetails)
   searchBookInput.addEventListener('keyup', Blog.searchBlog)
   sortDropItems.forEach(item => item.addEventListener('click', Blog.sortBlog))
-
+  blogCategories.addEventListener('change', Blog.checkedCategoryBlog)
+  blogCategoriesMobile.addEventListener('change', Blog.checkedCategoryBlog)
 }

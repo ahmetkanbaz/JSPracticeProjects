@@ -160,23 +160,14 @@
                 Sırala
               </button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">A - Z</a></li>
-                <li><a class="dropdown-item" href="#">Z - A</a></li>
-                <li><a class="dropdown-item" href="#">Yeniden Eskiye</a></li>
-                <li><a class="dropdown-item" href="#">Eskiden Yeniye</a></li>
-              </ul>
-            </div>
-
-            <div class="dropdown d-block d-md-none">
-              <button
-                class="btn btn-secondary dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Blog Kategorileri
-              </button>
-              <ul class="dropdown-menu blogCategoriesMobile">
+                <li><a class="dropdown-item sortItems" href="#">A - Z</a></li>
+                <li><a class="dropdown-item sortItems" href="#">Z - A</a></li>
+                <li>
+                  <a class="dropdown-item sortItems" href="#">Yeniden Eskiye</a>
+                </li>
+                <li>
+                  <a class="dropdown-item sortItems" href="#">Eskiden Yeniye</a>
+                </li>
               </ul>
             </div>
 
@@ -186,6 +177,20 @@
                 class="d-flex flex-column gap-2 blogCategories"
                 aria-label="Checkbox toggle blog categories"
               ></div>
+            </div>
+
+            <div class="d-block d-md-none">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Blog Kategorileri
+                </button>
+                <ul class="dropdown-menu blogCategoriesMobile"></ul>
+              </div>
             </div>
 
             <div class="d-flex justify-content-end mt-md-4">
@@ -198,6 +203,8 @@
               </button>
             </div>
           </div>
+
+          
           <div class="col-md-9 mt-3 mt-md-0">
             <div class="d-flex gap-3">
               <input

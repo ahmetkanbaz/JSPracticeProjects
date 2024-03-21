@@ -13,6 +13,26 @@ class Filter {
     Filter.filterBlogs();
   };
 
+  static categoryList2Filter = function (type, check, value) {
+    if (type == "mobile") {
+      if (check) {
+        dropDownCategoryList.push(value);
+      } else {
+        if (dropDownCategoryList.indexOf(value) > -1) {
+          dropDownCategoryList.splice(dropDownCategoryList.indexOf(value), 1);
+        }
+      }
+    } else {
+      if (check) {
+        categoryList.push(value);
+      } else {
+        if (categoryList.indexOf(value) > -1)
+          categoryList.splice(categoryList.indexOf(value), 1);
+      }
+    }
+    Filter.filterBlogs();
+  };
+
   static filterBlogs = async function () {
     let blogs = await crud.get();
 
@@ -33,8 +53,19 @@ class Filter {
       else blogs.sort((a, b) => new Date(a.date) - new Date(b.date));
     }
 
+    if (categoryList.length > 0) {
+      blogs = Filter.filterBlogs4CheckCategories(blogs, categoryList)
+    }
+
+    if (dropDownCategoryList.length > 0) {
+      blogs = Filter.filterBlogs4CheckCategories(blogs, dropDownCategoryList)
+    }
+
     UI.displayFilterBlogs(blogs);
-    console.log(blogs);
     if (blogs.length == 0) console.log("Bulunamadı.");
   };
+
+  static filterBlogs4CheckCategories = function (blogs, tempArray) {
+    return blogs.filter(blog => tempArray.includes(blog.category))
+  }
 }

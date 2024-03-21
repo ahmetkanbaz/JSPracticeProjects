@@ -65,11 +65,21 @@ class Blog {
   };
 
   static searchBlog = function (e) {
-    Filter.searchBlogs2Filter(e.target.value)
+    Filter.searchBlogs2Filter(e.target.value.trim())
   }
 
   static sortBlog = function (e) {
     Filter.sortBlogs2Filter(e.target.textContent)
+    e.preventDefault()
+  }
+
+  static checkedCategoryBlog = function (e) {
+    if (e.target.className == 'form-check-input') {
+      Filter.categoryList2Filter('mobile', e.target.checked, e.target.value)
+    }
+    else {
+      Filter.categoryList2Filter('', e.target.checked, e.target.value)
+    }
     e.preventDefault()
   }
 }

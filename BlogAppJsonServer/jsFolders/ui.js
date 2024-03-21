@@ -107,23 +107,19 @@ class UI {
   };
 
   static createNewCategory = function (categoryName) {
-    blogCategories.innerHTML += `<input
-    type="checkbox"
-    class="btn-check"
-    id=${categoryName}
-    autocomplete="off"
-  />
-  <label class="btn btn-outline-primary" for=${categoryName}
-    >${categoryName}</label
-  >`;
+    blogCategories.innerHTML += `
+    <input type="checkbox" class="btn-check" id="${categoryName}" autocomplete="off" value = "${categoryName}"/>
+    <label class="btn btn-outline-primary" for="${categoryName}">${categoryName}</label>`;
+
     blogCategoriesMobile.innerHTML += `<li class = 'ps-1'>
         <div class="form-check">
           <input
             class="form-check-input"
             type="checkbox"
-            id=${categoryName}
+            id="${categoryName}"
+            value="${categoryName}"
           />
-          <label class="form-check-label" for=${categoryName}>
+          <label class="form-check-label" for="${categoryName}">
             ${categoryName}
           </label>
         </div>
