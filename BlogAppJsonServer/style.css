@@ -115,6 +115,14 @@ footer a:hover {
   background-color: #B28358;
 }
 
+#blogInfoModal label {
+  margin-bottom: 0;
+}
+
+#blogInfoModal p {
+  font-size: .9rem;
+}
+
 @media screen and (max-width: 992px) {
   .blur {
     width: 100%;

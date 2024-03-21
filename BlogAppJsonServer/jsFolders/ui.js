@@ -38,6 +38,7 @@ class UI {
       <button
         type="button"
         class="btn btn-info fa-solid fa-eye"
+        data-bs-toggle="modal" data-bs-target="#blogInfoModal"
       ></button>
       <button
         type="button"
@@ -48,6 +49,17 @@ class UI {
 
     blogs.appendChild(newBlogCol);
   };
+
+  static detailBlog2UI = function (blog) {
+    const { title, author, category, content, date, imageUrl } = blog;
+
+    blogInfoModalTitleModal.textContent = title;
+    blogInfoModalAuthorModal.textContent = author;
+    blogInfoModalCategoryModal.textContent = category;
+    blogInfoModalContentModal.textContent = content;
+    blogInfoModalDateModal.textContent = date;
+    blogInfoModalImageUrlModal.textContent = imageUrl;
+  }
 
   static deleteBlog2UI = function (blog) {
     blog.remove();
@@ -64,5 +76,19 @@ class UI {
     blogModalLabel.textContent = 'Blog Güncelle'
     createNewBlogButtonModal.classList.add('d-none')
     updateBlogButtonModal.classList.remove('d-none')
+
+    updateBlogButtonModal.addEventListener('click', (e) => {
+      let updateBlog = {
+        id: blog.id,
+        title: blogTitleModal.value,
+        author: blogAuthorModal.value,
+        category: blogCategoryModal.value,
+        content: blogContentModal.value,
+        date: blogDateModal.value,
+        imageUrl: blogImageUrlModal.value
+      }
+      Request.updateBlogFromJsonServer(updateBlog)
+      e.preventDefault()
+    })
   };
 }

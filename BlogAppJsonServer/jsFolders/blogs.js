@@ -9,19 +9,8 @@ class Blog {
     this.imageUrl = imageUrl;
   }
 
-  static showAllBlogsFromJsonServer = async function () {
-    const allBlogs = await crud.get();
-    if (allBlogs.length > 0)
-      allBlogs.map((blog) =>
-        UI.addNewBlog2UI(blog.id, blog.title, blog.imageUrl)
-      );
-    else if (allBlogs.length == 0) UI.alert("Blog bulunamadı!");
-    else UI.alert("Bir hatayla karşılaşıldı!");
-  };
-
-  static addBlog = async function (e) {
-    UI.clearModalInputs()
-    let id = Date.now();
+  static addBlog = function (e) {
+    let id = String(Date.now());
     let title = blogTitleModal.value.trim();
     let author = blogAuthorModal.value.trim();
     let category = blogCategoryModal.value.trim();
@@ -42,27 +31,25 @@ class Blog {
         imageUrl
       );
       UI.addNewBlog2UI(id, title, imageUrl);
-      const res = await crud.post(newBlog);
-      console.log(res);
+      Request.addNewBlog2JsonServer(newBlog);
     }
     e.preventDefault();
   };
 
-  static detailBlog = async function (e) {
+  static detailBlog = function (e) {
     if (e.target.classList.contains("fa-eye")) {
-      const blog = await crud.getSingleBlog(
-        e.target.parentElement.parentElement.parentElement.id
+      Request.getDetailBlogFromJsonServer(
+        e.target.parentElement.parentElement.parentElement.id, 'info'
       );
-      console.log(blog);
     }
     e.preventDefault();
   };
 
-  static deleteBlog = async function (e) {
+  static deleteBlog = function (e) {
     if (e.target.classList.contains("fa-trash")) {
       if (confirm("Blogu silmek istediğinize emin misiniz?")) {
         UI.deleteBlog2UI(e.target.parentElement.parentElement.parentElement);
-        await crud.deleteSingleBlog(
+        Request.deleteBlogFromJsonServer(
           e.target.parentElement.parentElement.parentElement.id
         );
       }
@@ -70,12 +57,10 @@ class Blog {
     e.preventDefault();
   };
 
-  static updateBlog = async function (e) {
+  static showUpdateBlogDetails = async function (e) {
     if (e.target.classList.contains("fa-pencil")) {
-      const blog = await crud.getSingleBlog(e.target.parentElement.parentElement.parentElement.id)
-      UI.showUpdateBlogDetails2UI(blog)
+      Request.getDetailBlogFromJsonServer(e.target.parentElement.parentElement.parentElement.id, 'update')
     }
-
     e.preventDefault();
   };
 }

@@ -223,7 +223,11 @@
             </div>
 
             <div class="d-flex justify-content-end mt-md-4">
-              <button type="button" class="btn btn-danger px-4" id="clearAllFiltersButton">
+              <button
+                type="button"
+                class="btn btn-danger px-4"
+                id="clearAllFiltersButton"
+              >
                 Filtreleri Temizle
               </button>
             </div>
@@ -236,13 +240,20 @@
                 placeholder="Blog Başlığına veya Yazar Adına Göre Arama Yapınız..."
                 id="searchBookInput"
               />
-              <button class="btn btn-primary px-5" type="button" data-bs-toggle="modal" data-bs-target="#blogModal" id="addBlogUI">Ekle</button>
+              <button
+                class="btn btn-primary px-5"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#blogModal"
+                id="addBlogUI"
+              >
+                Ekle
+              </button>
             </div>
 
             <h5 class="border-bottom pb-2 my-3">Bloglar</h5>
 
-            <div class="row row-gap-3 blogs">
-            </div>
+            <div class="row row-gap-3 blogs"></div>
 
             <div
               class="d-flex justify-content-md-end justify-content-center mt-3"
@@ -256,43 +267,182 @@
       </div>
     </section>
 
-    <div class="modal fade" id="blogModal" tabindex="-1" aria-labelledby="blogModalLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="blogModal"
+      tabindex="-1"
+      aria-labelledby="blogModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="blogModalLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
-              <div class="mb-3">
-                <label for="blogTitleModal" class="form-label">* Başlık</label>
-                <input type="text" class="form-control shadow-none" id="blogTitleModal" placeholder="Blog başlığını giriniz...">
-              </div>
-              <div class="mb-3">
-                <label for="blogAuthorModal" class="form-label">* Yazar Adı - Soyadı</label>
-                <input type="text" class="form-control shadow-none" id="blogAuthorModal" placeholder="Blog yazarını giriniz...">
-              </div>
-              <div class="mb-3">
-                <label for="blogCategoryModal" class="form-label">* Kategori</label>
-                <input type="text" class="form-control shadow-none" id="blogCategoryModal" placeholder="Blog kategorisini giriniz...">
-              </div>
-              <div class="mb-3">
-                <label for="blogContentModal" class="form-label">* İçerik</label>
-                  <textarea name="blogContentModal" id="blogContentModal" rows="7" class="form-control shadow-none" placeholder="Blogu giriniz..."></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="blogDateModal" class="form-label">Tarih</label>
-                <input type="date" class="form-control shadow-none" id="blogDateModal" placeholder="Blog yazılma tarihini giriniz...">
-              </div>
-              <div class="mb-3">
-                <label for="blogImageUrlModal" class="form-label">* Resim URL'si</label>
-                <input type="url" class="form-control shadow-none" id="blogImageUrlModal" placeholder="Blog resim URL'sini giriniz...">
-              </div>
+            <div class="mb-3">
+              <label for="blogTitleModal" class="form-label">* Başlık</label>
+              <input
+                type="text"
+                class="form-control shadow-none"
+                id="blogTitleModal"
+                placeholder="Blog başlığını giriniz..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="blogAuthorModal" class="form-label"
+                >* Yazar Adı - Soyadı</label
+              >
+              <input
+                type="text"
+                class="form-control shadow-none"
+                id="blogAuthorModal"
+                placeholder="Blog yazarını giriniz..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="blogCategoryModal" class="form-label"
+                >* Kategori</label
+              >
+              <input
+                type="text"
+                class="form-control shadow-none"
+                id="blogCategoryModal"
+                placeholder="Blog kategorisini giriniz..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="blogContentModal" class="form-label">* İçerik</label>
+              <textarea
+                name="blogContentModal"
+                id="blogContentModal"
+                rows="7"
+                class="form-control shadow-none"
+                placeholder="Blogu giriniz..."
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="blogDateModal" class="form-label">Tarih</label>
+              <input
+                type="date"
+                class="form-control shadow-none"
+                id="blogDateModal"
+                placeholder="Blog yazılma tarihini giriniz..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="blogImageUrlModal" class="form-label"
+                >* Resim URL'si</label
+              >
+              <input
+                type="url"
+                class="form-control shadow-none"
+                id="blogImageUrlModal"
+                placeholder="Blog resim URL'sini giriniz..."
+              />
+            </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="createNewBlogButtonModal">Blog Oluştur</button>
-            <button type="button" class="btn btn-warning" data-bs-dismiss="modal" id="updateBlogButtonModal">Güncelle</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Kapat
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              id="createNewBlogButtonModal"
+            >
+              Blog Oluştur
+            </button>
+            <button
+              type="button"
+              class="btn btn-warning"
+              data-bs-dismiss="modal"
+              id="updateBlogButtonModal"
+            >
+              Güncelle
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="blogInfoModal"
+      tabindex="-1"
+      aria-labelledby="blogInfoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="blogInfoModalLabel">
+              Blog Detayları
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="blogInfoModalTitleModal" class="form-label"
+                >* Başlık</label
+              >
+              <p class="mb-0" id="blogInfoModalTitleModal"></p>
+            </div>
+            <div class="mb-3">
+              <label for="blogInfoModalAuthorModal" class="form-label"
+                >* Yazar Adı - Soyadı</label
+              >
+              <p class="mb-0" id="blogInfoModalAuthorModal"></p>
+            </div>
+            <div class="mb-3">
+              <label for="blogInfoModalCategoryModal" class="form-label"
+                >* Kategori</label
+              >
+              <p class="mb-0" id="blogInfoModalCategoryModal"></p>
+            </div>
+            <div class="mb-3">
+              <label for="blogInfoModalContentModal" class="form-label"
+                >* İçerik</label
+              >
+              <p id="blogInfoModalContentModal" class="mb-0"></p>
+            </div>
+            <div class="mb-3">
+              <label for="blogInfoModalDateModal" class="form-label"
+                >Tarih</label
+              >
+              <p class="mb-0" id="blogInfoModalDateModal"></p>
+            </div>
+            <div class="mb-3">
+              <label for="blogInfoModalImageUrlModal" class="form-label"
+                >* Resim URL'si</label
+              >
+              <p class="mb-0" id="blogInfoModalImageUrlModal"></p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Kapat
+            </button>
           </div>
         </div>
       </div>
@@ -408,6 +558,7 @@
 
     <script src="./jsFolders/ui.js"></script>
     <script src="./jsFolders/crud.js"></script>
+    <script src="./jsFolders/request.js"></script>
     <script src="./jsFolders/blogs.js"></script>
     <script src="./jsFolders/app.js"></script>
   </body>

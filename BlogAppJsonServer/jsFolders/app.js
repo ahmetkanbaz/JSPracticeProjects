@@ -20,16 +20,23 @@ const updateBlogButtonModal = document.getElementById('updateBlogButtonModal')
 
 const addBlogUI = document.getElementById('addBlogUI')
 
+const blogInfoModalTitleModal = document.getElementById('blogInfoModalTitleModal')
+const blogInfoModalAuthorModal = document.getElementById('blogInfoModalAuthorModal')
+const blogInfoModalCategoryModal = document.getElementById('blogInfoModalCategoryModal')
+const blogInfoModalContentModal = document.getElementById('blogInfoModalContentModal')
+const blogInfoModalDateModal = document.getElementById('blogInfoModalDateModal')
+const blogInfoModalImageUrlModal = document.getElementById('blogInfoModalImageUrlModal')
+
 addEventListeners()
 
 const crud = new Crud ('http://localhost:3000/blogs')
 
 function addEventListeners () {
-  document.addEventListener('DOMContentLoaded', Blog.showAllBlogsFromJsonServer)
+  document.addEventListener('DOMContentLoaded', Request.showAllBlogsFromJsonServer)
 
   createNewBlogButtonModal.addEventListener('click', Blog.addBlog)
   addBlogUI.addEventListener('click', UI.clearModalInputs)
   blogs.addEventListener('click', Blog.detailBlog)
   blogs.addEventListener('click', Blog.deleteBlog)
-  blogs.addEventListener('click', Blog.updateBlog)
+  blogs.addEventListener('click', Blog.showUpdateBlogDetails)
 }
